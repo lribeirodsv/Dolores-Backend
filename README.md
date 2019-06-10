@@ -1,4 +1,4 @@
-# Portal-de-noticias
+# Dolores Condominium
 
 # Create a new migration:
 knex migrate:make [migration_name]
