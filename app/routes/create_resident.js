@@ -1,22 +1,22 @@
-//executa uma funcao ao chamar o dominio /noticias
+//executa uma funcao ao chamar o dominio /create_resident
 module.exports = function(app,database) {
     
     app.post('/create_resident', (request, response) => {
         
-        console.log("[TRACE] - /create_resident service started");
+        console.log("[TRACE] - /create_resident = Service started");
 
         var body = request.body;
 
-        if (body.username != undefined && body.password != undefined){
+        if (body.username != undefined && body.password != undefined) {
 
             database.createResident({
                 username: request.body.username,
                 password: request.body.password
             })
-            .then(() => response.sendStatus(200));
+            .then(() => response.status(200).json({'message':'User successfully created'}));
 
         } else {
-            response.sendStatus(400);
+            response.status(400).json({'message':'Its necessary a username and a password'});
         }
     });
 };

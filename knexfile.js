@@ -8,9 +8,6 @@ module.exports = {
     user : 'root',
     password : '123',
     database : 'dolores' 
-  },
-  migrations: {
-    tableName: 'residents'
   }
-
+  
 };
