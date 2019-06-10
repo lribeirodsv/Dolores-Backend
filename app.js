@@ -1,8 +1,14 @@
 var app = require("./config/server"); 
 var database = require ("./config/database");
+var fileSystem = require("fs");
+var routesPath = "./app/routes/";
 
-var createUserRoute = require('./app/routes/create_resident')(app,database);
-var loginRoute = require('./app/routes/login')(app,database);
+//carrega todas as rotas presentes no diretorio 'routes'
+fileSystem.readdirSync(routesPath).forEach(function(file) {
+    var route = routesPath + file;
+    require(route)(app,database);
+    console.log(`[TRACE] - Mapped endpoint /${file.substring(0, file.length - 3)}`);
+});
 
 //sobe o servidor na porta 3000 e executa a funcao de callback
 console.log("[TRACE] - Starting server...");
