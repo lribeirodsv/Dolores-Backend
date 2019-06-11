@@ -19,7 +19,7 @@ module.exports = function(app,database) {
             });
 
         } else {
-            console.log("[TRACE] - /login = Missing \"username\" or \"password\" in request");
+            console.log("[ERROR] - /login = Missing \"username\" or \"password\" in request");
             response.status(400).json({'message':'Its necessary a \"username\" and a \"password\"'});
         }
     });

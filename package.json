@@ -11,8 +11,16 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "ejs": "^2.6.1",
-    "express": "^4.16.4",
+    "express": "^4.17.1",
     "knex": "^0.17.3",
     "mysql": "^2.16.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lribeirodsv/Dolores-Backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lribeirodsv/Dolores-Backend/issues"
+  },
+  "homepage": "https://github.com/lribeirodsv/Dolores-Backend#readme"
 }
